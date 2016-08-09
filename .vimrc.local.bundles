@@ -1,0 +1,4 @@
+NeoBundle 'mhinz/vim-signify'
+NeoBundle 'ryanoasis/vim-devicons'
+NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
+NeoBundle 'wellle/targets.vim'

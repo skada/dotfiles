@@ -1,0 +1,21 @@
+let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
+let g:syntastic_python_pep8_post_args='--ignore=E501,E128,E225'
+let g:syntastic_python_checkers=['python', 'flake8', 'pep8', 'pylint']
+
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|tox|ico|git|hg|svn))$'
+
+
+let g:airline_powerline_fonts = 1
+"  if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"  endif
+"  " powerline symbols
+"  let g:airline_left_sep = ''
+"  let g:airline_left_alt_sep = ''
+"  let g:airline_right_sep = ''
+"  let g:airline_right_alt_sep = ''
+"  let g:airline_symbols.branch = ''
+"  let g:airline_symbols.readonly = ''
+"  let g:airline_symbols.linenr = ''
+
