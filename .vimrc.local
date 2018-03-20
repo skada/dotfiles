@@ -1,21 +1,70 @@
 let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
 let g:syntastic_python_pep8_post_args='--ignore=E501,E128,E225'
-let g:syntastic_python_checkers=['python', 'flake8', 'pep8', 'pylint']
+" let g:syntastic_python_checkers=['python', 'flake8', 'pep8', 'pylint']
+let g:syntastic_python_checkers=[]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
+let g:ale_linters = {}
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|tox|ico|git|hg|svn))$'
 
 
 let g:airline_powerline_fonts = 1
-"  if !exists('g:airline_symbols')
-"    let g:airline_symbols = {}
-"  endif
-"  " powerline symbols
-"  let g:airline_left_sep = ''
-"  let g:airline_left_alt_sep = ''
-"  let g:airline_right_sep = ''
-"  let g:airline_right_alt_sep = ''
-"  let g:airline_symbols.branch = ''
-"  let g:airline_symbols.readonly = ''
-"  let g:airline_symbols.linenr = ''
+let g:webdevicons_enable_nerdtree = 1
+set relativenumber
 
+" vim-python
+augroup vimrc-xml
+  autocmd!
+  autocmd FileType xml setlocal expandtab shiftwidth=2 tabstop=4 colorcolumn=79
+      \ formatoptions+=croq softtabstop=2 smartindent
+augroup END
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+let g:ale_emit_conflict_warnings = 0
+let g:ale_open_list = 1
+
+function! NERDTreeRefresh()
+    if &filetype == "nerdtree"
+        silent exe substitute(mapcheck("R"), "<CR>", "", "")
+    endif
+endfunction
+
+autocmd BufEnter * call NERDTreeRefresh()
+
+let g:jira_url = 'https://jiradbg.deutsche-boerse.de'
+let g:jira_username = 'iz373'
+let g:jira_password = 'ooX5je2h9'
+let g:airline_disabled = 0
+
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
+let delimitMate_expand_space = 1
+let delimitMate_expand_cr = 1
+
+let Grep_Skip_Dirs = '.git node_modules obj-debug'
+
+" Autostart NERDTree
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+" size
+let g:NERDTreeWinSize=40
+
+set cursorline
+
+set nolazyredraw
